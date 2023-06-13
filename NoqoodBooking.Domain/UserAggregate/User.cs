@@ -1,4 +1,4 @@
-﻿namespace NoqoodBooking.Domain.Entities
+﻿namespace NoqoodBooking.Domain.UserAggregate
 {
     public class User
     {

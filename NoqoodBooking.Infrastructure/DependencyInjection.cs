@@ -17,15 +17,23 @@ namespace NoqoodBooking.Infrastructure
     {
         public static IServiceCollection AddInfrastructure(this IServiceCollection services, ConfigurationManager configuration)
         {
-            services.AddAuth(configuration);
+            services
+                .AddAuth(configuration)
+                .AddPersistance(configuration);
 
             services.AddSingleton<IDateTimeProvider, DateTimeProvider>();
 
-            services.AddScoped<IUserRepository, UserRepository>();
 
             return services;
         }
 
+        public static IServiceCollection AddPersistance(this IServiceCollection services, ConfigurationManager configuration)
+        {
+            services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IReservationRepository, ReservationRepository>();
+
+            return services;
+        }
         public static IServiceCollection AddAuth(this IServiceCollection services, ConfigurationManager configuration)
         {
             var jwtSettings = new JwtSettings();

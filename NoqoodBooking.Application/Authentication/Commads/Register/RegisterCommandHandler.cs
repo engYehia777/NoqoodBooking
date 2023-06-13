@@ -1,10 +1,10 @@
-﻿using NoqoodBooking.Application.Authentication.Common;
+﻿using ErrorOr;
+using MediatR;
+using NoqoodBooking.Application.Authentication.Common;
 using NoqoodBooking.Application.Common.Interfaces.Authentication;
 using NoqoodBooking.Application.Common.Interfaces.Persistence;
 using NoqoodBooking.Domain.Common.Errors;
-using NoqoodBooking.Domain.Entities;
-using ErrorOr;
-using MediatR;
+using NoqoodBooking.Domain.UserAggregate;
 
 namespace NoqoodBooking.Application.Authentication.Commads.Register;
 
