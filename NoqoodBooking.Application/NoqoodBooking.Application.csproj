@@ -17,4 +17,8 @@
     <ProjectReference Include="..\NoqoodBooking.Domain\NoqoodBooking.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Reservations\Queries\" />
+  </ItemGroup>
+
 </Project>

@@ -1,5 +1,5 @@
 ﻿using NoqoodBooking.Application.Common.Interfaces.Persistence;
-using NoqoodBooking.Domain.Entities;
+using NoqoodBooking.Domain.UserAggregate;
 
 namespace NoqoodBooking.Infrastructure.Persistence;
 

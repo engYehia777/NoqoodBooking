@@ -1,8 +1,8 @@
-﻿using NoqoodBooking.Application.Common.Interfaces.Authentication;
-using NoqoodBooking.Application.Common.Interfaces.Services;
-using NoqoodBooking.Domain.Entities;
-using Microsoft.Extensions.Options;
+﻿using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
+using NoqoodBooking.Application.Common.Interfaces.Authentication;
+using NoqoodBooking.Application.Common.Interfaces.Services;
+using NoqoodBooking.Domain.UserAggregate;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;

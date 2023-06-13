@@ -1,4 +1,4 @@
-﻿using NoqoodBooking.Domain.Entities;
+﻿using NoqoodBooking.Domain.UserAggregate;
 
 namespace NoqoodBooking.Application.Common.Interfaces.Persistence;
 
