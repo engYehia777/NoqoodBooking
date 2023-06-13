@@ -1,0 +1,21 @@
+@host=http://localhost:5207
+
+POST {{host}}/auth/login
+Content-Type: application/json
+
+{
+    "email": "anichaiemantinband.com",
+    "password": "Amik01232!"
+}
+
+
+###
+POST {{host}}/auth/register
+Content-Type: application/json
+
+{
+    "firstName": "Aoi chai",
+    "lastName": "Mantinband",
+    "email": "anichaiemantinband.com",
+    "password": "Amik01232!"
+}

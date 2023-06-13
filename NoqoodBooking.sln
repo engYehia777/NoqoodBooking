@@ -1,0 +1,59 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33414.496
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Requests", "Requests", "{9796313F-4BB3-46A9-97BA-2E141BA70C62}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Auth", "Auth", "{7AFC5571-D02B-4107-9772-D2EBC0080216}"
+	ProjectSection(SolutionItems) = preProject
+		Auth.http = Auth.http
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NoqoodBooking.Api", "NoqoodBooking.Api\NoqoodBooking.Api.csproj", "{9B619387-3E0A-4675-B72A-5DA0E75A9731}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NoqoodBooking.Application", "NoqoodBooking.Application\NoqoodBooking.Application.csproj", "{73753087-E9E9-4BF1-84E0-445119D6FED0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NoqoodBooking.Contracts", "NoqoodBooking.Contracts\NoqoodBooking.Contracts.csproj", "{968DD1B5-9DEC-46DE-BB38-FD3D9BF9714C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NoqoodBooking.Domain", "NoqoodBooking.Domain\NoqoodBooking.Domain.csproj", "{0A2DEB56-D422-454F-BC6C-20C1E2B3234A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NoqoodBooking.Infrastructure", "NoqoodBooking.Infrastructure\NoqoodBooking.Infrastructure.csproj", "{A49DB6F3-6DEE-4A23-8E28-8C25E8E5409B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9B619387-3E0A-4675-B72A-5DA0E75A9731}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B619387-3E0A-4675-B72A-5DA0E75A9731}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B619387-3E0A-4675-B72A-5DA0E75A9731}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B619387-3E0A-4675-B72A-5DA0E75A9731}.Release|Any CPU.Build.0 = Release|Any CPU
+		{73753087-E9E9-4BF1-84E0-445119D6FED0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73753087-E9E9-4BF1-84E0-445119D6FED0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73753087-E9E9-4BF1-84E0-445119D6FED0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73753087-E9E9-4BF1-84E0-445119D6FED0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{968DD1B5-9DEC-46DE-BB38-FD3D9BF9714C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{968DD1B5-9DEC-46DE-BB38-FD3D9BF9714C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{968DD1B5-9DEC-46DE-BB38-FD3D9BF9714C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{968DD1B5-9DEC-46DE-BB38-FD3D9BF9714C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A2DEB56-D422-454F-BC6C-20C1E2B3234A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A2DEB56-D422-454F-BC6C-20C1E2B3234A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A2DEB56-D422-454F-BC6C-20C1E2B3234A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A2DEB56-D422-454F-BC6C-20C1E2B3234A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A49DB6F3-6DEE-4A23-8E28-8C25E8E5409B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A49DB6F3-6DEE-4A23-8E28-8C25E8E5409B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A49DB6F3-6DEE-4A23-8E28-8C25E8E5409B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A49DB6F3-6DEE-4A23-8E28-8C25E8E5409B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7AFC5571-D02B-4107-9772-D2EBC0080216} = {9796313F-4BB3-46A9-97BA-2E141BA70C62}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {93860987-B39C-486C-9D25-B557A60AB573}
+	EndGlobalSection
+EndGlobal
