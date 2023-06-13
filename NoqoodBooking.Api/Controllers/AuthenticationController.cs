@@ -1,11 +1,12 @@
-﻿using NoqoodBooking.Application.Authentication.Commads.Register;
+﻿using ErrorOr;
+using MapsterMapper;
+using MediatR;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using NoqoodBooking.Application.Authentication.Commads.Register;
 using NoqoodBooking.Application.Authentication.Common;
 using NoqoodBooking.Application.Authentication.Queries.Login;
 using NoqoodBooking.Contracts.Authentication;
-using ErrorOr;
-using MapsterMapper;
-using MediatR;
-using Microsoft.AspNetCore.Mvc;
 
 namespace NoqoodBooking.Api.Controllers;
 
@@ -23,6 +24,7 @@ public class AuthenticationController : ApiController
         _mapper = mapper;
     }
 
+    [AllowAnonymous]
     [HttpPost("register")]
     public async Task<IActionResult> Register(RegisterRequest request)
     {
@@ -38,6 +40,7 @@ public class AuthenticationController : ApiController
 
 
 
+    [AllowAnonymous]
     [HttpPost("login")]
     public async Task<IActionResult> Login(LoginRequest request)
     {
@@ -53,8 +56,6 @@ public class AuthenticationController : ApiController
         return authResult.Match(
            autResult => Ok(_mapper.Map<AuthenticationResponse>(autResult)),
             errors => Problem(errors));
-
-
 
     }
 }
