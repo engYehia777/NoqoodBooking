@@ -1,6 +1,8 @@
 using NoqoodBooking.Api;
 using NoqoodBooking.Application;
+using NoqoodBooking.Domain.UserAggregate;
 using NoqoodBooking.Infrastructure;
+using NoqoodBooking.Infrastructure.Persistence;
 
 var builder = WebApplication.CreateBuilder(args);
 {
@@ -9,6 +11,9 @@ var builder = WebApplication.CreateBuilder(args);
                     .AddApplication()
                     .AddInfrastructure(builder.Configuration);
 
+    builder.Services.AddIdentityCore<User>()
+.AddEntityFrameworkStores<ApplicationDbContext>();
+    builder.Services.ConfigureOptions<IdentityOptionsSetup>();
 
     builder.Services.AddEndpointsApiExplorer();
     builder.Services.AddSwaggerGen();

@@ -1,9 +1,10 @@
-﻿using NoqoodBooking.Domain.UserAggregate;
+﻿using NoqoodBooking.Application.Authentication.Commads.Register;
+using NoqoodBooking.Domain.UserAggregate;
 
 namespace NoqoodBooking.Application.Common.Interfaces.Persistence;
 
 public interface IUserRepository
 {
-    User? GetUserByEmail(string email);
-    void AddUser(User user);
+    Task<User?> GetUserByEmailAsync(string email);
+    Task AddUserAsync(RegisterCommand userCommand);
 }

@@ -4,7 +4,7 @@ namespace NoqoodBooking.Domain.Reservation.ValueObjects
 {
     public sealed class ReservationId : ValueObject
     {
-        public Guid Value { get; }
+        public Guid Value { get; private set; }
         private ReservationId(Guid value)
         {
             Value = value;
@@ -14,6 +14,13 @@ namespace NoqoodBooking.Domain.Reservation.ValueObjects
         {
             return new(Guid.NewGuid());
         }
+
+        public static ReservationId Create(Guid value)
+        {
+            return new(value);
+        }
+
+
 
         protected override IEnumerable<object> GetEqualityComponents()
         {
