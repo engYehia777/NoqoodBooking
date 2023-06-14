@@ -4,7 +4,7 @@ namespace NoqoodBooking.Domain.Reservation.ValueObjects
 {
     public sealed class TripId : ValueObject
     {
-        public Guid Value { get; }
+        public Guid Value { get; private set; }
         private TripId(Guid value)
         {
             Value = value;
@@ -13,6 +13,11 @@ namespace NoqoodBooking.Domain.Reservation.ValueObjects
         public static TripId CreateUnique()
         {
             return new(Guid.NewGuid());
+        }
+
+        public static TripId Create(Guid value)
+        {
+            return new(value);
         }
 
         protected override IEnumerable<object> GetEqualityComponents()

@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
@@ -8,6 +9,7 @@ using NoqoodBooking.Application.Common.Interfaces.Persistence;
 using NoqoodBooking.Application.Common.Interfaces.Services;
 using NoqoodBooking.Infrastructure.Authentication;
 using NoqoodBooking.Infrastructure.Persistence;
+using NoqoodBooking.Infrastructure.Persistence.Repositories;
 using NoqoodBooking.Infrastructure.Services;
 using System.Text;
 
@@ -17,9 +19,13 @@ namespace NoqoodBooking.Infrastructure
     {
         public static IServiceCollection AddInfrastructure(this IServiceCollection services, ConfigurationManager configuration)
         {
+
             services
                 .AddAuth(configuration)
                 .AddPersistance(configuration);
+
+            services.AddDbContext<ApplicationDbContext>(options =>
+               options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
 
             services.AddSingleton<IDateTimeProvider, DateTimeProvider>();
 
@@ -29,6 +35,7 @@ namespace NoqoodBooking.Infrastructure
 
         public static IServiceCollection AddPersistance(this IServiceCollection services, ConfigurationManager configuration)
         {
+
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IReservationRepository, ReservationRepository>();
 

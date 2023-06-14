@@ -3,8 +3,6 @@ using MediatR;
 using NoqoodBooking.Application.Authentication.Common;
 using NoqoodBooking.Application.Common.Interfaces.Authentication;
 using NoqoodBooking.Application.Common.Interfaces.Persistence;
-using NoqoodBooking.Domain.Common.Errors;
-using NoqoodBooking.Domain.UserAggregate;
 
 namespace NoqoodBooking.Application.Authentication.Commads.Register;
 
@@ -23,23 +21,10 @@ public class RegisterCommandHandler : IRequestHandler<RegisterCommand, ErrorOr<A
     {
         await Task.CompletedTask;
 
-        // Check if user already exists
-        if (_userRepository.GetUserByEmail(command.Email) is not null)
-        {
-            return Errors.User.DuplicateEmail;
-        }
-
-        // Create user (generate unique ID)
-        var user = new User
-        {
-            FirstName = command.Firstname,
-            LastName = command.Lastname,
-            Email = command.Email,
-            Password = command.Password
-        };
-        _userRepository.AddUser(user);
+        await _userRepository.AddUserAsync(command);
         // Create JWT token
-        var token = _jwtTokenGenerator.GenerateToken(user);
-        return new AuthenticationResult(user, token);
+        //var token = _jwtTokenGenerator.GenerateToken(user);
+        //return new AuthenticationResult(user, token);
+        return default!;
     }
 }
